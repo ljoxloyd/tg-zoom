@@ -11,12 +11,12 @@ import express from 'express';
 const token = process.env.BOT_TOKEN
 const url = process.env.APP_URL 
 const options = { webhook: {
-  port: process.env.PORT
+  port: process.env.PORT || 5000
 }}
 
 const bot = new TelegramBot(token, options);
 
-bot.setWebHook(`${url}/bot${token}`);
+bot.setWebHook(`${url}/${token}`);
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
