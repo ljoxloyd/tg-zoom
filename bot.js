@@ -10,15 +10,13 @@ import express from 'express';
 
 const token = process.env.BOT_TOKEN
 const url = process.env.APP_URL || "https://tg-zoom.herokuapp.com:443"
-const options = { webhook: {
-  port: process.env.PORT || 5000
-}}
+const options = { polling: true }
 
 const bot = new TelegramBot(token, options);
 
 bot.sendMessage("401895376", "I'm up and running")
 
-bot.setWebHook(`${url}bot${token}`);
+// bot.setWebHook("https://tg-zoom.herokuapp.com");
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
