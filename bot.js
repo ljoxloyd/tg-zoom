@@ -18,7 +18,7 @@ const bot = new TelegramBot(token, options);
 
 bot.sendMessage("401895376", "I'm up and running")
 
-bot.setWebHook(`${url}/bot${token}`);
+bot.setWebHook(`${url}bot${token}`);
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
