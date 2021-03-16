@@ -16,6 +16,8 @@ const options = { webhook: {
 
 const bot = new TelegramBot(token, options);
 
+bot.sendMessage("401895376", "I'm up and running")
+
 bot.setWebHook(`${url}/${token}`);
 
 // Matches "/echo [whatever]"
